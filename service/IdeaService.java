@@ -68,7 +68,8 @@ public class IdeaService {
 			// dao 객체에게 ideadto 객체의 주소를 전달
 			// dao에게 insert 작업 요청, 매개변수값으로 ideadto
 			ideadao.insert(ideadto);
-
+//			english
+//			korean
 		}
 
 		private void ideaDel() { // 전체보기 실행 후, 삭제 >> ideaTitleList() 호출 후, 삭제

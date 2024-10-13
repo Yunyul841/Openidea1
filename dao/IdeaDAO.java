@@ -60,6 +60,7 @@ public class IdeaDAO {
 			if (conn()) {
 				try {
 					// 쿼리문 작성
+					// 4-1 제안하기 insert into ideabank values(ideabank_seq.nextval,???,defaullt
 					String sql = "insert into ideabank values (ideabank_seq.nextval,?,?,?,default)";
 					PreparedStatement psmt = conn.prepareStatement(sql);
 					// Mapping
@@ -90,16 +91,17 @@ public class IdeaDAO {
 				System.out.println("데이터베이스 커넥션 실패");
 
 			}
-
+ 
 		}
 
 		public ArrayList<IdeaDTO> selectAll() {
 			ArrayList<IdeaDTO> ilist = new ArrayList<IdeaDTO>();
 			if (conn()) {
 				try {
+					// 4-5 전체보기 select * from ideabank
 					String sql = "select * from ideabank";
 					PreparedStatement psmt = conn.prepareStatement(sql);
-					ResultSet rs = psmt.executeQuery();
+					ResultSet rs = psmt.executeQuery();;
 					// ResultSet은 테이블 형식으로 가져온다고 이해
 					while (rs.next()) { // next() 메서드는 rs에서 참조하는 테이블에서
 										// 튜플을 순차적으로 하나씩 접근하는 메서드
@@ -129,6 +131,7 @@ public class IdeaDAO {
 		public void delete(int delNo) {
 			if (conn()) {
 				try {
+					// 4-3 삭제하기 delete from ideabank where num=?
 					String sql = "delete from ideabank where num=?";
 					PreparedStatement psmt = conn.prepareStatement(sql);
 					psmt.setInt(1, delNo);
@@ -176,6 +179,7 @@ public class IdeaDAO {
 		public void update(IdeaDTO idto) {
 			if (conn()) {
 				try {
+					// 4-2 수정하기 update ideabank set title = ? content=? where num=?
 					String sql = "update ideabank set title=?, content=? where num=? ";
 					PreparedStatement psmt = conn.prepareStatement(sql);
 					psmt.setString(1, idto.getTitle());
@@ -197,6 +201,7 @@ public class IdeaDAO {
 			ArrayList<IdeaDTO> ilist = new ArrayList<IdeaDTO>();
 			if (conn()) {
 				try {
+					// 4-4 검색하기 select * from ideabank where title like '&?%'
 					String sql = "select * from ideabank where " + "title like '%" + searchW + "%'";
 					System.out.println(sql);
 					// psmt.setString(1,searchW)는 안되고 위처럼 직접 입력해야 됨
