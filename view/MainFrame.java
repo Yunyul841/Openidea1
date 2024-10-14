@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -12,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.MouseInputListener;
 
 import dao.IdeaDAO;
 import dto.IdeaDTO;
@@ -24,7 +26,7 @@ import dto.IdeaDTO;
 	// 화면에 관련된 기능이 JFrame. JFrame을 상속받아서 이 프로그램의 view를 만든다.
 
 	// 인터페이스 : implement >> 기능을 구현하기 위해서 사용한다(ActionListener라는 기능을 구현받았다)
-	public class MainFrame extends JFrame implements ActionListener {
+	public class MainFrame extends JFrame implements ActionListener, MouseInputListener {
 		// 인터페이스 구현 - 기능을 처리하기 위해. 콤마 찍고 뒤에 다른 리스너 추가 가능
 
 		// 글자 객체
@@ -116,6 +118,48 @@ import dto.IdeaDTO;
 				ideaDao.insert(dto);
 			}
 
+		}
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
 		}
 
 		// view를 gui로 구현

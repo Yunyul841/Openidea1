@@ -101,7 +101,7 @@ public class IdeaDAO {
 					// 4-5 전체보기 select * from ideabank
 					String sql = "select * from ideabank";
 					PreparedStatement psmt = conn.prepareStatement(sql);
-					ResultSet rs = psmt.executeQuery();;
+					ResultSet rs = psmt.executeQuery();
 					// ResultSet은 테이블 형식으로 가져온다고 이해
 					while (rs.next()) { // next() 메서드는 rs에서 참조하는 테이블에서
 										// 튜플을 순차적으로 하나씩 접근하는 메서드
